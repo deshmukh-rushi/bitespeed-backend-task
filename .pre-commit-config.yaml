@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
+    hooks:
+      - id: pyupgrade
+        files: '\.py$'
+        exclude: 'migrations|settings'
+
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: "1.16.0"
+    hooks:
+      - id: django-upgrade
+        args: [--target-version, "5.0"]
+        files: '\.py$'
+        exclude: 'migrations|settings'
+
+  - repo: https://github.com/psf/black
+    rev: 24.2.0
+    hooks:
+      - id: black
+        files: '\.py$'
+        exclude: 'migrations|settings'
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        files: '\.py$'
+        exclude: 'migrations|settings'
